@@ -1,0 +1,274 @@
+// iterrables=array, string,set,map
+// iterable is an object that canbe iterated over youcan access each and every element of that object.
+// using for of loop protocol=setofrules
+// symbol.iterator use for iterator object show return value and done.
+
+// iterator return value and done
+
+// const iterable = "ram";
+// const iterator = iterable[Symbol.iterator]();
+// console.log(iterator)
+// string iterator
+
+// const iterable = [1,2,3,4];
+// const iterator = iterable[Symbol.iterator]();
+// console.log(iterator)
+
+// const iterable = [1, 2, 3, 4];
+// const iterator = iterable[Symbol.iterator]();
+// console.log(iterator.next())
+// console.log(iterator.next())
+// console.log(iterator.next())
+// console.log(iterator.next())
+// console.log(iterator.next())
+
+// for(const x of iterable){
+//     console.log(x)
+// }
+
+// let num=[1,2,3,4,5]
+// for(let i of num){
+//     console.log(i)
+// }
+
+// generator  
+// A generator is a special type of function that allows you to pause and resume execution. A generator function returns 
+// an iterator object that can be used to control the execution flow of the function. Generator functions are defined using
+//  the function* syntax, and they use the yield keyword to pause the execution and return a value.
+
+// function* sum(){
+//     yield 1;
+//     yield 2;
+//     yield 3;
+// }
+// const gen=sum()
+// console.log(gen.next()); 
+// console.log(gen.next()); 
+// console.log(gen.next()); 
+// console.log(gen.next()); 
+
+// freez in freez method we cant add delete and update properties
+
+// const person={
+//     fname:"Ram",
+//     age:20,
+//     address:"pune"
+// }
+
+// Object.freeze(person)
+// console.log(person);
+
+// person.lname="shinde";
+// console.log(person)
+
+// delete person.age;
+// console.log(person)
+
+// person.fname="resh";
+// console.log(person)
+
+// seal in seal method we can update perticular property
+// const person={
+//         fname:"Ram",
+//         age:20,
+//         address:"pune"
+//     }
+    
+//     Object.seal(person)
+//     console.log(person);
+
+//     person.fname="Resh";
+//     console.log(person);
+
+//     delete person.age;
+//     console.log(person)
+
+//     person.lname="shinde";
+//     console.log(person)
+
+// prevent extension  vadhnyapasunthambvaych in these method we cant add but update and delete
+
+// preventExtensions stop for add
+// const person={
+//     fname:"Resh",
+//     age:20,
+//     add:"Mumbai"
+// }
+//     Object.preventExtensions(person);
+//     console.log(person)
+    
+//     person.fname="Neha";
+//         console.log(person);
+
+//     person.lname="shinde";
+//     console.log(person)
+
+
+// spread operator(...)
+// spread operator  expand array ,object and iterable
+
+// copying array
+
+// let arr=[1,2,3];
+// //let arr2=[...arr];
+//  // /let arr2 = arr
+// console.log(arr2)
+
+// merging
+
+// let arr1=[1,2,3];
+// let arr2=[11,22,33];
+// let mergarray=[...arr1,...arr2];
+// console.log(mergarray);
+
+
+// passing array as an argument  to print seprate element
+
+// function add(x,y,z){
+//     return x+y+z
+// }
+// let arr2=[1,2,3];
+// console.log(...arr2);
+// console.log(add(...arr2));
+
+
+// 
+
+
+// let obj1 = {
+//     name:"resh",
+//     age:22,
+// }
+// let  obj2={
+//     ...obj1
+// }
+// console.log(obj2)
+
+// mergobject if you have same property  in iobject then its not merge
+
+// let obj1 = {
+//     name:"resh",
+//     class:"it"
+// }
+// let  obj2={
+//     age:23, 
+//     rNo:11
+// }
+// let mergobj={
+//     ...obj1,...obj2
+// }
+// console.log(mergobj)
+
+
+// let obj={
+//     name:"ram",
+//     age:20,
+//     skill:"SON",
+// }
+// let obj2={
+//     name:"ram",
+//     age:10,
+//     skill:"node"
+// }
+// let mergobj={
+//     ...obj,...obj2
+// }
+// console.log(mergobj)
+
+
+// rest parameter
+
+// when you dont know how many argument pass
+
+// function sum(...arg){
+//     return arg.reduce((initial,curent)=> initial+curent);
+// }
+// console.log (sum(1,2,3));
+
+// rest parameter show in array and store vcalue 
+
+// function display(a,b,...rest){
+// console.log(a)
+// console.log(b)
+// console.log(rest)
+// }
+// display(1,2,3,4,5)
+
+// destructring pack value convert unpack  
+
+// let [a,b,c] = [1,2,3];
+// console.log(a);
+// //console.log(b);
+// console.log(c);
+
+// object destructring
+
+// let person={
+// name:"resh",
+// age:22,
+// city:"mumbai"
+// }
+// let {age}=person;
+// console.log(age)
+
+// shallo copy and deep copy creates anew obj only top level object are copy
+
+// let object1={
+//     name:"resh",
+//     age:22,
+//     add:{
+//         sectorNo:2,
+//         city:"dombivali"
+//     },
+//     fun: function(){
+
+//     }
+// }
+// let obj2=object1;
+// console.log(object1)
+
+
+// let object1={
+//         fname:"ram",
+//         age:22,
+//         add:{
+//             street:"gandhiNagar",
+//             city:"dombivali"
+//         },
+//         fun: function(){
+    
+//         }
+//     }
+//     let obj2=object1;
+//     obj2=JSON.parse(JSON.stringify(object1))
+//     obj2.fname="riya"
+//     // console.log(obj2)
+//     // obj2.fname="sam"
+//     // console.log(object1, obj2)
+
+//     // obj2.add.street="Nehru",
+//     // obj2=Object.assign({},object1)
+//     // obj2={...object1}
+//     console.log(obj2)
+
+
+let original={
+    name:"ram",
+    add:{
+        city:"Pune",
+        pincode:1001
+    },
+    getdata:function(){
+
+    }
+}
+// let shallocopy={...original}
+// shallocopy=Object.assign({},original)
+let deepcopy=JSON.parse(JSON.stringify(original))
+deepcopy.name="seeta";
+deepcopy.add.city="Mumbai";
+console.log(original, deepcopy);
+
+// in shallow copy affect on original top level property nested property var override hoil
+// deep copy use stringify work is correctly
+
